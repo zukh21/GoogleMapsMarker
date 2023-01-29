@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GMapMarker</string>
+    <string name="description">Description</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_all_markers">clear all markers</string>
+    <string name="are_you_wanted_clear_all_markers">Are you wanted clear all markers?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
