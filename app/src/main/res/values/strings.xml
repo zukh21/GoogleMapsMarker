@@ -5,6 +5,15 @@
     <string name="cancel">Cancel</string>
     <string name="clear_all_markers">clear all markers</string>
     <string name="are_you_wanted_clear_all_markers">Are you wanted clear all markers?</string>
+    <string name="are_you_wanted_remove_this_marker">Are you wanted remove this marker?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="remove">Remove</string>
+    <string name="edit">Edit</string>
+    <string name="delete_mode">Delete mode</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="show_list_markers">Show list markers</string>
+    <string name="update">Update</string>
+    <string name="ready">Ready</string>
 </resources>

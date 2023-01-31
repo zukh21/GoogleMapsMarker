@@ -4,7 +4,6 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.gmapmarker.dao.MarkerDataDao
 import com.example.gmapmarker.dto.MarkerDataEntity
-import com.google.android.gms.maps.model.Marker
 import javax.inject.Singleton
 
 @Singleton

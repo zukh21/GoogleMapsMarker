@@ -37,6 +37,7 @@ android {
         viewBinding true
     }
     compileOptions {
+        coreLibraryDesugaringEnabled = true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -48,6 +49,9 @@ android {
 dependencies {
     def hilt_version = "2.44.2"
     def coroutines_version = "1.6.4"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.2.2")
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
     implementation 'androidx.activity:activity-ktx:1.6.1'
     implementation 'androidx.core:core-ktx:1.7.0'
