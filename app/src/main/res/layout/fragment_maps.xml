@@ -1,32 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    tools:context=".MapsFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/clearAll"
-        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:contentDescription="@string/clear_all_markers"
-        android:minWidth="24dp"
-        android:minHeight="24dp"
-        android:padding="4dp"
-        app:backgroundTint="#2196F3"
-        app:cornerRadius="10dp"
-        app:icon="@drawable/clear_icon"
-        app:iconSize="36dp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/deleteMode"
+            android:layout_width="@dimen/mapCustomButtons"
+            android:layout_height="@dimen/mapCustomButtons"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:checked="false"
+                android:id="@+id/deleteModeIcon"
+                />
+
+            <ImageView
+                android:id="@+id/deleteModeTint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/clear_all_markers"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_delete"
+                app:tint="?attr/colorControlNormal" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/clearAll"
+            android:layout_width="@dimen/mapCustomButtons"
+            android:layout_height="@dimen/mapCustomButtons"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/deleteMode">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/clear_all_markers"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clear_icon"
+                app:tint="?attr/colorControlNormal" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/showListMarkers"
+            android:layout_width="@dimen/mapCustomButtons"
+            android:layout_height="@dimen/mapCustomButtons"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clearAll">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/show_list_markers"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_list_alt"
+                app:tint="?attr/colorControlNormal" />
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

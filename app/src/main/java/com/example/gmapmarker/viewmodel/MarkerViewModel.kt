@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.gmapmarker.dto.MarkerDataEntity
 import com.example.gmapmarker.repository.MarkerRepository
-import com.google.android.gms.maps.model.Marker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
@@ -29,6 +28,10 @@ class MarkerViewModel @Inject constructor(private val repository: MarkerReposito
         } catch (e: Exception) {
             error(e)
         }
+    }
+
+    fun updateById(id: Long, title: String, lat: Double, lng: Double, description: String) = viewModelScope.launch {
+        repository.updateById(id, title, lat, lng, description)
     }
 
     fun removeById(id: Long) = viewModelScope.launch {
